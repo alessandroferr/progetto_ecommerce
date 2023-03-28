@@ -1,3 +1,125 @@
+<!DOCTYPE html>
 <html>
-  <h1>index<h1>
-    </html>
+<head>
+	<title>StockY</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>StockY</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Prodotti</a></li>
+				<li><a href="#">Contatti</a></li>
+        <li><a href="#">Carrello</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section class="prodotti">
+			<h2>Prodotti in vetrina</h2>
+			<ul>
+				<li>
+					<a href="#">
+						<img src="/img/Air-Jordan-1-Chicago.jpeg" alt="Sneakers Air Jordan">
+						<h3>Jordan 1 Retro High OG</h3>
+						<p>Chicago Lost and Found</p>
+						<span class="prezzo">349,99 €</span>
+						<button class="aggiungi-al-carrello" onclick="addToCart()">Aggiungi al carrello</button>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="prodotto2.jpg" alt="Prodotto 2">
+						<h3>Nome prodotto 2</h3>
+						<p>Descrizione prodotto 2</p>
+						<span class="prezzo">29,99 €</span>
+						<button class="aggiungi-al-carrello" onclick="addToCart()">Aggiungi al carrello</button>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="prodotto3.jpg" alt="Prodotto 3">
+						<h3>Nome prodotto 3</h3>
+						<p>Descrizione prodotto 3</p>
+						<span class="prezzo">39,99 €</span>
+						<button class="aggiungi-al-carrello" onclick="addToCart()">Aggiungi al carrello</button>
+					</a>
+				</li>
+			</ul>
+		</section>
+
+		<section class="carrello">
+			<h2>Il tuo carrello</h2>
+			<ul id="carrello-lista">
+			</ul>
+			<div class="totale">
+				<span>Totale:</span>
+				<span id="carrello-totale">0,00 €</span>
+			</div>
+			<button class="checkout" onclick="checkout()">Checkout</button>
+		</section>
+	</main>
+
+	<footer>
+		
+	<p>&copy; 2023 Il mio e-commerce</p>
+</footer>
+
+<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	function plusSlides(n) {
+		showSlides(slideIndex += n);
+	}
+
+	function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("slideshow");
+		if (n > slides.length) {
+			slideIndex = 1
+		}
+		if (n < 1) {
+			slideIndex = slides.length
+		}
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+		slides[slideIndex - 1].style.display = "block";
+	}
+
+	function addToCart() {
+		alert("Prodotto aggiunto al carrello!");
+		var prodotto = this.parentNode;
+		var nome = prodotto.getElementsByTagName("h3")[0].textContent;
+		var prezzo = parseFloat(prodotto.getElementsByClassName("prezzo")[0].textContent.replace(",", ".").replace(" €", ""));
+		var carrelloLista = document.getElementById("carrello-lista");
+		var carrelloTotale = document.getElementById("carrello-totale");
+		var li = document.createElement("li");
+		var spanNome = document.createElement("span");
+		var spanPrezzo = document.createElement("span");
+		spanNome.textContent = nome;
+		spanPrezzo.textContent = prezzo.toFixed(2) + " €";
+		li.appendChild(spanNome);
+		li.appendChild(spanPrezzo);
+		carrelloLista.appendChild(li);
+		var totale = parseFloat(carrelloTotale.textContent.replace(",", ".").replace(" €", ""));
+		totale += prezzo;
+		carrelloTotale.textContent = totale.toFixed(2) + " €";
+	}
+
+	function checkout() {
+		alert("Grazie per il tuo acquisto!");
+		var carrelloLista = document.getElementById("carrello-lista");
+		var carrelloTotale = document.getElementById("carrello-totale");
+		carrelloLista.innerHTML = "";
+		carrelloTotale.textContent = "0,00 €";
+	}
+</script>
+</body>
+</html>

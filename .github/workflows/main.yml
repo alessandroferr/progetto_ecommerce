@@ -19,7 +19,7 @@ jobs:
     - name: generate pdf
       run: | 
         cd intro
-        npx @marp-team/marp-cli@latest slide.md --pdf --allow-local-files
+        npx @marp-team/marp-cli@latest intro.md --pdf --allow-local-files
       
     - name: commit & push
       run: |

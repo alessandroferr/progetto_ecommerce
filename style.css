@@ -120,7 +120,11 @@ fieldset {
  color:#888;
 }
 
-
 .boxcarrello{
   margin-right: 20px;
+}
+
+.btn{
+  background-color: #2D407A;
+	border-color: #2D407A;
 }

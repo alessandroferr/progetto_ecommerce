@@ -134,6 +134,7 @@ fieldset {
 
 .card-title{
   color: #000000;
+	font-style: bold;
 }
 
 .card-text{

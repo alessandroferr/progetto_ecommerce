@@ -128,3 +128,11 @@ fieldset {
   background-color: #2D407A;
 	border-color: #2D407A;
 }
+
+.card-title{
+  color: #000000;
+}
+
+.card-text{
+  color: #000000;
+}

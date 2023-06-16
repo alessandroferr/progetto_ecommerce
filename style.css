@@ -42,7 +42,7 @@ body {
 }
 
 #contact h3 {
-	color: #316cf4;
+	color: #2D407A;
 	display: block;
 	font-size: 30px;
 	font-weight: 400;
@@ -87,7 +87,7 @@ fieldset {
 	cursor:pointer;
 	width:100%;
 	border:none;
-	background:#316cf4;
+	background:#2D407A;
 	color:#FFF;
 	margin:0 0 5px;
 	padding:10px;
@@ -95,7 +95,7 @@ fieldset {
 }
 
 #contact button[type="submit"]:hover {
-	background:#316cf4;
+	background:#2D407A;
 	-webkit-transition:background 0.3s ease-in-out;
 	-moz-transition:background 0.3s ease-in-out;
 	transition:background-color 0.3s ease-in-out;

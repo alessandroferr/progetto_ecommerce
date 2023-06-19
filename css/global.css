@@ -1,0 +1,96 @@
+.spaziaturaprodotti {
+	margin-bottom: 25px;
+	margin-top: 25px;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+body {
+	color: rgb(0, 0, 0);
+
+	font-family: 'Poppins', sans-serif;
+	font-size: 12px;
+	font-weight: 300;
+
+	line-height: 30px;
+	margin: 0;
+	min-height: 100vh;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.topbar {
+	position: relative;
+	margin-bottom: 80px;
+
+	z-index: 999;
+}
+
+.boxcarrello {
+	margin-right: 20px;
+}
+
+.btn {
+	background-color: #2D407A;
+	border-color: #2D407A;
+}
+
+.card-title {
+	color: #000000;
+	font-family: "Poppins";
+	font-style: bolder;
+	font-size: 180%;
+}
+
+.card-text,
+.card-price {
+	color: #000000;
+}
+
+.card-price {
+	font-size: 150%;
+}
+
+
+.nav-link {
+	color: #2D407A;
+}
+
+.card {
+	border: none !important;
+}
+
+.card-title {
+	height: 3em;
+}
+
+/* Rimuove il timer dello Slider */
+.autoplay-progress {
+	display: none;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+	color: #2D407A;
+}
+
+.swiper-pagination-bullet-active {
+	background-color: #2D407A;
+}

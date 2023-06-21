@@ -12,6 +12,15 @@
 		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="/css/global.css">
+
+	<script>
+		function addToCart () {
+			addProduct( 'jordan',
+				document.getElementById( 'taglia' ).value,
+				document.getElementById( 'quantita' ).value
+			);
+		}
+	</script>
 </head>
 
 <body>
@@ -71,7 +80,7 @@
 				<form>
 					<div class="mb-3">
 						<label for="taglia" class="form-label">Taglia:</label>
-						<select class="form-select" aria-label="Default select example">
+						<select id="taglia" class="form-select" aria-label="Default select example">
 							<option selected>Seleziona la tua taglia</option>
 							<option value="1">EU 39 / US 6.5 / UK 6</option>
 							<option value="2">EU 40 / US 7 / UK 6.5</option>
@@ -85,7 +94,7 @@
 						<label for="quantita" class="form-label">Quantità:</label>
 						<input type="number" class="form-control" id="quantita" min="1" value="1">
 					</div>
-					<span class="btn btn-primary">Aggiungi al carrello</span>
+					<span class="btn btn-primary" onclick="addToCart()">Aggiungi al carrello</span>
 				</form>
 			</div>
 		</div>
@@ -102,6 +111,9 @@
 
 	<!-- Collegamento ai file JavaScript di Bootstrap -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- cart -->
+	<script src="/js/cart.js"></script>
 </body>
 
 </html>

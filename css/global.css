@@ -15,6 +15,8 @@ body {
 	line-height: 30px;
 	margin: 0;
 	min-height: 100vh;
+
+	/* padding-bottom: 300px; */
 }
 
 * {
@@ -93,4 +95,9 @@ header {
 
 .swiper-pagination-bullet-active {
 	background-color: #2D407A;
+}
+
+footer {
+	bottom: 0;
+	width: 100%;
 }

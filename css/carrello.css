@@ -1,0 +1,49 @@
+.carrello {
+	display: flex;
+	flex-direction: column;
+
+	border: 1px solid red;
+
+}
+
+.carrello .header {
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+}
+
+.carrello .row {
+	display: flex;
+
+	justify-content: space-between;
+	/* flex-flow: row; */
+	flex-direction: row;
+	align-content: flex-start;
+
+	background-color: #bbdefb;
+	height: 100%;
+	padding: 15px;
+	gap: 5px;
+
+	border: 1px solid blue;
+}
+
+.carrello .row .image,
+.carrello .row .dettagli {
+	display: flex;
+}
+
+.carrello .row img {
+	height: 250px;
+}
+
+.carrello .row h3 {
+	margin-left: 80px;
+}
+
+.carrello .row td .taglia {
+	margin-right: 10px;
+	padding: 100px;
+	border: 1px solid yellow;
+}

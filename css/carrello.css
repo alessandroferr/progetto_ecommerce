@@ -1,9 +1,12 @@
+.page {
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+}
+
 .carrello {
 	display: flex;
 	flex-direction: column;
-
-	border: 1px solid red;
-
 }
 
 .carrello .header {
@@ -11,6 +14,10 @@
 	flex-direction: column;
 
 	align-items: center;
+
+	font-size: 250%;
+
+	margin-bottom: 50px;
 }
 
 .carrello .row {
@@ -21,12 +28,16 @@
 	flex-direction: row;
 	align-content: flex-start;
 
-	background-color: #bbdefb;
+	background-color: white;
 	height: 100%;
 	padding: 15px;
 	gap: 5px;
+}
 
-	border: 1px solid blue;
+.carrello table {
+	border-bottom: 1px solid #aaa;
+
+
 }
 
 .carrello .row .image,
@@ -35,15 +46,28 @@
 }
 
 .carrello .row img {
-	height: 250px;
+	height: 150px;
 }
 
 .carrello .row h3 {
-	margin-left: 80px;
+	margin-left: 30px;
+	font-size: 150%;
 }
 
-.carrello .row td .taglia {
-	margin-right: 10px;
-	padding: 100px;
-	border: 1px solid yellow;
+table {
+	font-family: Poppins, sans-serif;
+	font-size: 130%;
+}
+
+td {
+	vertical-align: middle;
+}
+
+.acquista {
+	background-color: #2D407A;
+	border-color: #2D407A;
+	color: white;
+
+	padding: 10px;
+	border-radius: 5px;
 }

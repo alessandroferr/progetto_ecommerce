@@ -141,6 +141,12 @@ function floatToPrice ( num ) {
 	return num.toFixed( 2 ).replace( '.', ',' );
 }
 
+function buy_now () {
+	alert( 'Grazie per aver acquistato da noi!' );
+	cart.items = [];
+	cart._calcTotal();
+}
+
 function renderCart () {
 	var prods = document.getElementById( 'prodotti' );
 
@@ -152,14 +158,29 @@ function renderCart () {
 	}
 
 	var res = '<div class="row">';
+	res += `<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Prodotto</th>
+						<th scope="col">Prezzo</th>
+						<th scope="col">Quantità</th>
+						<th scope="col">Taglia</th>
+						<th scope="col" style="text-align: right">Totale</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+			<tbody>`;
 
 	for ( var i = 0; i < cart.items.length; i++ ) {
-		var table = '<table><tr><td width="1">';
+		var table = '<tr>';
 		var it = cart.items[ i ];
 
-		table += '<img src="/img/' + it.item.image + '" alt="' + it.item.nome + '" />';
-		table += '</td><td valign="center"><h3>' + it.item.nome + '</h3></td>';
-		table += '<td valign="center"><select class="form-select">';
+		table += '<td><img src="/img/' + it.item.image + '" alt="' + it.item.nome + '" /></td>';
+		table += '<td>' + it.item.nome + '</td>';
+		table += '<td align="right">' + floatToPrice( it.item.prezzo ) + '</td>';
+		table += '<td><input id="prod_' + it.item.id + '" min="1" type="number" value="' + cart.items[ i ].quant + '" style="width: 3em" onchange="updateProd(\'' + it.item.id + '\')"/></td>';
+		table += '<td><select class="form-select" id="taglia_' + it.item.id + '" onchange="updateTaglia(\'' + it.item.id + '\')">';
 		table += '<option >Seleziona taglia</option>';
 		table += '<option value="1" ' + ( it.item.taglia == "1" ? "selected" : "" ) + '>EU 39 / US 6.5 / UK 6</option>';
 		table += '<option value="2" ' + ( it.item.taglia == "2" ? "selected" : "" ) + '>EU 40 / US 7 / UK 6.5</option>';
@@ -170,14 +191,34 @@ function renderCart () {
 		table += '<option value="7" ' + ( it.item.taglia == "7" ? "selected" : "" ) + '>EU 45 / US 11 / UK 10.5</option>';
 		table += '<option value="8" ' + ( it.item.taglia == "8" ? "selected" : "" ) + '>EU 46 / US 12 / UK 11.5</option>';
 		table += '</select></td>';
-		table += '<td valign="center">&nbsp;<input id="prod_' + it.item.id + '" min="1" type="number" value="' + cart.items[ i ].quant + '" style="width: 3em" onchange="updateProd(\'' + it.item.id + '\')"/>';
-		table += '<button onclick="cart.remove(\'' + it.item.id + '\')">Elimina</button></td>';
-		table += '<td valign="center"><h3>€&nbsp;' + floatToPrice( cart.items[ i ].total ) + '</h3></td></tr></table>';
+		table += '<td align="right"><h3>€&nbsp;' + floatToPrice( cart.items[ i ].total ) + '</h3></td>';
+		table += '<td><a href="#" class="btn btn-danger" style="background-color: #a00000" onclick="cart.remove(\'' + it.item.id + '\')">Elimina</a></td>';
+		table += '</tr>';
 
 		res += table;
 	}
 
-	res += '</div>';
+	// creo la riga del totale
+	res += `<tr>
+				<td colspan="5" align="right">
+					<h3>Totale</h3>
+				</td>
+				<td align="right">
+					<h3>€&nbsp;` + floatToPrice( cart.total ) + `</h3>
+				</td>
+				<td></td>
+			</tr>`;
+
+	// creo il bottone "acquista ora"
+	res += `<tr>
+				<td colspan="6" align="right">
+					<a href="#" class="btn btn-primary" onclick="buy_now()">Acquista ora</a>
+				</td>
+			</tr>`;
+
+
+
+	res += '</tbody></table></div>';
 
 	prods.innerHTML = res;
 }

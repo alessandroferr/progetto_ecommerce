@@ -6,4 +6,4 @@ In questo progoetto sono andato ad ideare un azienda che vendesse sneackers di q
 Ho cosi proceduto alla realiuzzazione del suto web con l'ausizio di Chat GPT per la realizzazione dei testi, lo sviluppo e la correzione di alcune sezioni del sito.
 
 # Sito web
-Il siuto web è funzionante al 100%, andando ad analizzare i singoli prodotti che sono cliccabili e portano alla singola pagina prodotti, nel quale possiamo trovare una sezione di scelta taglie il quale una volta decisa e una volta che si procede all'acquisto ci permette di vedere la scarpa direttamente nel carrello e di poter procedere all'acquisto del prodotto desiderato
+Il siuto web è funzionante al 100%, andando ad analizzare i singoli prodotti che sono cliccabili e portano alla singola pagina prodotti, nel quale possiamo trovare una sezione di scelta taglie il quale una volta decisa e una volta che si procede ad aggiungere il prodotto nel careello, ci permette di vedere la scarpa direttamente nel carrello e di poter procedere all'acquisto del prodotto desiderato
